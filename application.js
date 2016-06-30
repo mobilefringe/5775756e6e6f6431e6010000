@@ -246,15 +246,17 @@ function getUserToken() {
 
   function processSignIn(username, password){
     // console.log(username, password);
-    myApp.showPreloader(__n['modalSignInBusy']);
-     $.ajax({
-       url: host + apis['sign-in'],
-       data: {username: username, password: password, device_token: deviceToken},
-       method: 'POST',
-       dataType: 'json',
-       success: onSignInSuccess,
-       error: onSignInError
-     });
+    //myApp.showPreloader(__n['modalSignInBusy']);
+    // Update the toolbar callback.
+    window.location = 'toolbar://login/signin/success';
+    //$.ajax({
+    //   url: host + apis['sign-in'],
+    //   data: {username: username, password: password, device_token: deviceToken},
+    //   method: 'POST',
+    //   dataType: 'json',
+    //   success: onSignInSuccess,
+    //   error: onSignInError
+    // });
 
     
   }
