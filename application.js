@@ -248,14 +248,14 @@ function getUserToken() {
     // console.log(username, password);
     myApp.showPreloader(__n['modalSignInBusy']);
     onSignInSuccess();
-    // $.ajax({
-    //   url: host + apis['sign-in'],
-    //   data: {username: username, password: password, device_token: deviceToken},
-    //   method: 'POST',
-    //   dataType: 'json',
-    //   success: onSignInSuccess,
-    //   error: onSignInError
-    // });
+     $.ajax({
+       url: host + apis['sign-in'],
+       data: {username: username, password: password, device_token: deviceToken},
+       method: 'POST',
+       dataType: 'json',
+       success: onSignInSuccess,
+       error: onSignInError
+     });
 
     
   }
